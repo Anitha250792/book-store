@@ -1,0 +1,31 @@
+<section class="why-us-section" id="why-us">
+    <div class="container">
+        <div class="section-head text-center" data-aos="fade-up">
+            <span class="eyebrow eyebrow-light eyebrow-center">Why Inkleaf</span>
+            <h2 class="section-heading">Six reasons readers keep coming back</h2>
+        </div>
+
+        <div class="why-us-grid">
+            {% for item in why_choose_us %}
+            <div class="why-us-card" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'0' }}0">
+                <div class="why-us-icon"><i class="bi {{ item.icon }}"></i></div>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.text }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="experience-banner" data-aos="fade-up">
+    <div class="experience-media">
+        <img src="https://images.unsplash.com/photo-1521123845560-14093637aa7d?auto=format&fit=crop&w=1600&q=80" alt="Wide interior view of a warmly lit independent bookstore">
+    </div>
+    <div class="experience-overlay"></div>
+    <div class="container experience-inner">
+        <span class="eyebrow eyebrow-light">A Bookstore Is More Than Shelves</span>
+        <h2>It's where<br>curiosity begins.</h2>
+        <p>Visit us. Take your time. Find your story.</p>
+        <a href="{{ business.map_link }}" target="_blank" rel="noopener" class="btn btn-outline-literary btn-outline-light">Visit Our Store</a>
+    </div>
+</section>

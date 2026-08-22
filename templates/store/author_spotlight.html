@@ -1,0 +1,22 @@
+<section class="author-section" id="author">
+    <div class="container">
+        <div class="author-grid" data-aos="fade-up">
+            <div class="author-media">
+                <img src="{{ author.image }}" alt="Portrait of {{ author.name }}">
+            </div>
+            <div class="author-copy">
+                <span class="eyebrow">Author Spotlight</span>
+                <h2 class="author-name">{{ author.name }}</h2>
+                <p class="author-role">{{ author.role }}</p>
+                <blockquote>&ldquo;{{ author.quote }}&rdquo;</blockquote>
+                <p class="author-bio">{{ author.bio }}</p>
+                <div class="author-books">
+                    {% for b in author.books %}
+                    <span class="author-book-chip"><i class="bi bi-book"></i> {{ b }}</span>
+                    {% endfor %}
+                </div>
+                <a href="#books" class="link-cta">Explore Books <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,44 @@
+<section class="best-sellers-section">
+    <div class="container">
+        <div class="section-head" data-aos="fade-up">
+            <span class="eyebrow">Reader Favourites</span>
+            <h2 class="section-heading">What everyone's taking home this month</h2>
+        </div>
+
+        <div class="swiper best-sellers-swiper" data-aos="fade-up">
+            <div class="swiper-wrapper">
+                {% for book in best_sellers %}
+                <div class="swiper-slide">
+                    <div class="best-seller-card">
+                        <div class="book-cover">
+                            <img src="{{ book.image }}" alt="Cover of {{ book.title }} by {{ book.author }}" loading="lazy">
+                            <span class="book-ribbon">{{ book.badge }}</span>
+                        </div>
+                        <div class="book-body">
+                            <h3>{{ book.title }}</h3>
+                            <p class="book-author">{{ book.author }}</p>
+                            <div class="book-rating">
+                                {% for i in "12345" %}
+                                    {% if forloop.counter <= book.rating %}<i class="bi bi-star-fill"></i>{% else %}<i class="bi bi-star"></i>{% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="book-footer">
+                                <span class="book-price">&#8377;{{ book.price }}</span>
+                                <button type="button" class="btn-order-whatsapp"
+                                        data-book="{{ book.title }}"
+                                        data-author="{{ book.author }}"
+                                        data-price="{{ book.price }}">
+                                    Order <i class="bi bi-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-button-prev best-sellers-prev"></div>
+            <div class="swiper-button-next best-sellers-next"></div>
+            <div class="swiper-pagination best-sellers-pagination"></div>
+        </div>
+    </div>
+</section>

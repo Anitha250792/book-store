@@ -1,0 +1,36 @@
+<section class="about-section" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-media" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1524578271613-d550eacf6090?auto=format&fit=crop&w=900&q=80" alt="A warmly lit reading corner with a leather armchair and stacked books">
+                <div class="about-media-badge">
+                    <span class="badge-number">12</span>
+                    <span class="badge-text">Years of<br>Shelving Stories</span>
+                </div>
+            </div>
+            <div class="about-copy" data-aos="fade-left">
+                <span class="eyebrow">Our Story</span>
+                <h2 class="section-heading">More than a bookstore.<br>A place for stories.</h2>
+                <p>
+                    Inkleaf opened as a single room of borrowed shelves and a promise:
+                    every book here earns its place. Today we carry fiction, technology,
+                    self-development, children's books, academic texts and more — chosen
+                    by people who read every genre we sell, and who love pointing a reader
+                    toward the right next book.
+                </p>
+                <div class="about-features">
+                    {% for feature in about_features %}
+                    <div class="about-feature-card">
+                        <i class="bi bi-bookmark-check"></i>
+                        <div>
+                            <strong>{{ feature.title }}</strong>
+                            <span>{{ feature.text }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <a href="#books" class="link-cta">Discover Our Story <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>

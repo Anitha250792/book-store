@@ -1,0 +1,37 @@
+{% load static %}
+<header class="site-navbar" id="siteNavbar">
+    <div class="container navbar-inner">
+        <a href="#top" class="brand">
+            <span class="brand-mark"><i class="bi bi-book-half"></i></span>
+            <span class="brand-text">
+                <span class="brand-name">Inkleaf</span>
+                <span class="brand-sub">Books &middot; Stories &middot; Ideas</span>
+            </span>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="#top" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#books" class="nav-link">Books</a></li>
+                <li><a href="#categories" class="nav-link">Categories</a></li>
+                <li><a href="#author" class="nav-link">Authors</a></li>
+                <li><a href="#offers" class="nav-link">Offers</a></li>
+                <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:+{{ business.phone_link }}" class="btn-nav-call">
+                    <i class="bi bi-telephone-fill"></i> Call Now
+                </a>
+                <a href="https://wa.me/{{ business.phone_link }}?text={{ business.whatsapp_default_message|urlencode }}" class="btn-nav-order" target="_blank" rel="noopener">
+                    Order on WhatsApp
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>

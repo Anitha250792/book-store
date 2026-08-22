@@ -1,0 +1,24 @@
+<section class="categories-section" id="categories">
+    <div class="container">
+        <div class="section-head text-center" data-aos="fade-up">
+            <span class="eyebrow eyebrow-center">Explore By Category</span>
+            <h2 class="section-heading">Whatever you're curious about,<br>there's a story waiting</h2>
+        </div>
+
+        <div class="category-grid">
+            {% for cat in categories %}
+            <div class="category-card" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'0' }}0">
+                <div class="category-image">
+                    <img src="{{ cat.image }}" alt="{{ cat.name }}" loading="lazy">
+                    <span class="category-icon"><i class="bi {{ cat.icon }}"></i></span>
+                </div>
+                <div class="category-body">
+                    <h3>{{ cat.name }}</h3>
+                    <p>{{ cat.description }}</p>
+                    <a href="#books" class="category-arrow" aria-label="Browse {{ cat.name }}"><i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

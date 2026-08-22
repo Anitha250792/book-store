@@ -1,0 +1,63 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col footer-brand-col">
+                <a href="#top" class="brand footer-brand">
+                    <span class="brand-mark"><i class="bi bi-book-half"></i></span>
+                    <span class="brand-text">
+                        <span class="brand-name">Inkleaf</span>
+                    </span>
+                </a>
+                <p class="footer-tagline">Books &middot; Stories &middot; Ideas</p>
+                <p>A place for readers, dreamers and curious minds.</p>
+                <div class="footer-socials">
+                    <a href="{{ business.instagram }}" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="{{ business.facebook }}" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="{{ business.youtube }}" target="_blank" rel="noopener" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="https://wa.me/{{ business.phone_link }}" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#books">Books</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#author">Authors</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#categories">Fiction</a></li>
+                    <li><a href="#categories">Technology</a></li>
+                    <li><a href="#categories">Self Development</a></li>
+                    <li><a href="#categories">Children's Books</a></li>
+                    <li><a href="#categories">Academic</a></li>
+                    <li><a href="#categories">Business</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-contact-list">
+                    <li><i class="bi bi-telephone"></i> {{ business.phone_display }}</li>
+                    <li><i class="bi bi-envelope"></i> {{ business.email }}</li>
+                    <li><i class="bi bi-geo-alt"></i> {{ business.address_line2 }}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; {% now "Y" %} Inkleaf Book House. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,23 @@
+<section class="delivery-section">
+    <div class="container">
+        <div class="delivery-grid">
+            <div class="delivery-media" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=900&q=80" alt="A carefully wrapped parcel of books ready for delivery">
+            </div>
+            <div class="delivery-copy" data-aos="fade-left">
+                <span class="eyebrow">Delivery Areas</span>
+                <h2 class="section-heading">Books delivered to your door</h2>
+                <div class="delivery-areas-list">
+                    {% for area in delivery.areas %}
+                    <span class="area-chip"><i class="bi bi-geo-alt-fill"></i> {{ area }}</span>
+                    {% endfor %}
+                </div>
+                <ul class="delivery-info-list">
+                    <li><i class="bi bi-clock"></i> {{ delivery.same_day }}</li>
+                    <li><i class="bi bi-gift"></i> Free delivery above &#8377;{{ delivery.free_above }}</li>
+                    <li><i class="bi bi-box-seam"></i> {{ delivery.packing_note }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

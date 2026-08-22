@@ -1,0 +1,105 @@
+<section class="books-section" id="books">
+
+    <div class="container">
+
+        <div class="section-head" data-aos="fade-up">
+
+            <span class="eyebrow">
+                Featured Reads
+            </span>
+
+            <h2 class="section-heading">
+                Books our team can't stop recommending
+            </h2>
+
+        </div>
+
+
+        <div class="book-grid">
+
+            {% for book in books %}
+
+            <div
+                class="book-card"
+                data-aos="fade-up"
+                data-aos-delay="{{ forloop.counter0 }}0">
+
+                <div class="book-cover">
+
+                    <img
+                        src="{{ book.image }}"
+                        alt="Cover of {{ book.title }} by {{ book.author }}"
+                        loading="lazy">
+
+                    <span class="book-ribbon">
+                        {{ book.badge }}
+                    </span>
+
+                </div>
+
+
+                <div class="book-body">
+
+                    <span class="book-category">
+                        {{ book.category }}
+                    </span>
+
+                    <h3>
+                        {{ book.title }}
+                    </h3>
+
+                    <p class="book-author">
+                        {{ book.author }}
+                    </p>
+
+
+                    <div class="book-rating">
+
+                        {% for i in "12345" %}
+
+                            {% if forloop.counter <= book.rating %}
+
+                                <i class="bi bi-star-fill"></i>
+
+                            {% else %}
+
+                                <i class="bi bi-star"></i>
+
+                            {% endif %}
+
+                        {% endfor %}
+
+                    </div>
+
+
+                    <div class="book-footer">
+
+                        <span class="book-price">
+                            ₹{{ book.price }}
+                        </span>
+
+                        <button
+                            type="button"
+                            class="btn-order-whatsapp"
+                            data-book="{{ book.title }}"
+                            data-author="{{ book.author }}"
+                            data-price="{{ book.price }}">
+
+                            Order Now
+                            <i class="bi bi-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>

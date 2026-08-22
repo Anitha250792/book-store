@@ -1,0 +1,77 @@
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="section-head text-center" data-aos="fade-up">
+            <span class="eyebrow eyebrow-center">Enquiry &amp; Support</span>
+            <h2 class="section-heading">Reach us the way you prefer</h2>
+        </div>
+
+        <div class="contact-methods" data-aos="fade-up">
+            <a href="tel:+{{ business.phone_link }}" class="contact-method-card">
+                <i class="bi bi-telephone-fill"></i>
+                <div>
+                    <strong>Call Us</strong>
+                    <span>{{ business.phone_display }}</span>
+                </div>
+                <em>Start call <i class="bi bi-arrow-right"></i></em>
+            </a>
+            <a href="https://wa.me/{{ business.phone_link }}?text={{ business.whatsapp_default_message|urlencode }}" target="_blank" rel="noopener" class="contact-method-card">
+                <i class="bi bi-whatsapp"></i>
+                <div>
+                    <strong>WhatsApp</strong>
+                    <span>Replies within 10 minutes</span>
+                </div>
+                <em>Open chat <i class="bi bi-arrow-right"></i></em>
+            </a>
+            <a href="mailto:{{ business.email }}" class="contact-method-card">
+                <i class="bi bi-envelope-fill"></i>
+                <div>
+                    <strong>Email Support</strong>
+                    <span>{{ business.email }}</span>
+                </div>
+                <em>Write to us <i class="bi bi-arrow-right"></i></em>
+            </a>
+        </div>
+
+        <div class="contact-form-wrap" data-aos="fade-up">
+            <div class="contact-form-card">
+                <span class="eyebrow">Send an Enquiry</span>
+                <p class="form-intro">Fill this in and we'll get back to you shortly.</p>
+
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="form-alert form-alert-{{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+
+                <form method="post" action="{% url 'store:enquiry' %}" novalidate>
+                    {% csrf_token %}
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label" for="{{ form.name.id_for_label }}">Name</label>
+                            {{ form.name }}
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="{{ form.phone.id_for_label }}">Phone</label>
+                            {{ form.phone }}
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="{{ form.email.id_for_label }}">Email</label>
+                            {{ form.email }}
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="{{ form.interested_in.id_for_label }}">Interested In</label>
+                            {{ form.interested_in }}
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label" for="{{ form.message.id_for_label }}">Message</label>
+                            {{ form.message }}
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-accent-solid btn-form-submit">
+                        <i class="bi bi-send-fill"></i> Send Enquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

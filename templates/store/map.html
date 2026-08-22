@@ -1,0 +1,36 @@
+<section class="map-section">
+    <div class="container">
+        <div class="map-grid" data-aos="fade-up">
+            <div class="map-embed">
+                <iframe
+                    src="{{ business.map_embed_src }}"
+                    title="Inkleaf Book House location map"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <a href="{{ business.map_link }}" target="_blank" rel="noopener" class="map-open-link">
+                    Open in Maps <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+            </div>
+            <div class="map-info-card">
+                <span class="eyebrow eyebrow-light">Visit The Store</span>
+                <h3>Inkleaf Book House</h3>
+                <p class="map-address">
+                    {{ business.address_line1 }}<br>
+                    {{ business.address_line2 }}
+                </p>
+                <ul class="map-info-list">
+                    <li><i class="bi bi-clock"></i> {{ business.hours_weekday }}</li>
+                    <li><i class="bi bi-clock-history"></i> {{ business.hours_sunday }}</li>
+                    <li><i class="bi bi-telephone"></i> {{ business.phone_display }}</li>
+                    <li><i class="bi bi-envelope"></i> {{ business.email }}</li>
+                </ul>
+                <div class="map-actions">
+                    <a href="{{ business.map_link }}" target="_blank" rel="noopener" class="btn btn-outline-literary btn-outline-light">Get Directions</a>
+                    <a href="tel:+{{ business.phone_link }}" class="btn btn-primary-literary">Call Now</a>
+                    <a href="https://wa.me/{{ business.phone_link }}?text={{ business.whatsapp_default_message|urlencode }}" target="_blank" rel="noopener" class="btn btn-accent-solid">WhatsApp Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

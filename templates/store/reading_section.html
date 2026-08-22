@@ -1,0 +1,24 @@
+<section class="reading-section">
+    <div class="container">
+        <div class="reading-grid">
+            <div class="reading-copy" data-aos="fade-right">
+                <span class="eyebrow">Why Read</span>
+                <h2 class="section-heading">Read more.<br>Imagine more.<br><span class="accent-text">Become more.</span></h2>
+                <div class="reading-benefits">
+                    {% for b in reading_benefits %}
+                    <div class="reading-benefit">
+                        <i class="bi {{ b.icon }}"></i>
+                        <div>
+                            <strong>{{ b.title }}</strong>
+                            <span>{{ b.text }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="reading-media" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80" alt="An open book with pages catching warm light">
+            </div>
+        </div>
+    </div>
+</section>

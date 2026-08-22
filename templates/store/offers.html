@@ -1,0 +1,22 @@
+<section class="offers-section" id="offers">
+    <div class="container">
+        <div class="offer-card" data-aos="zoom-in">
+            <div class="offer-copy">
+                <span class="eyebrow eyebrow-light">{{ offer.eyebrow }}</span>
+                <h2>{{ offer.headline }}</h2>
+                <p>{{ offer.subtext }}</p>
+                <a href="https://wa.me/{{ business.phone_link }}?text={{ business.whatsapp_default_message|urlencode }}" class="btn btn-accent-solid" target="_blank" rel="noopener">
+                    {{ offer.cta }}
+                </a>
+            </div>
+            <div class="offer-timer">
+                <span class="timer-label">Offer ends in</span>
+                <div class="countdown" id="countdownTimer" data-hours="{{ offer.ends_in_hours }}">
+                    <div class="countdown-block"><span id="cdHours">00</span><small>Hours</small></div>
+                    <div class="countdown-block"><span id="cdMinutes">00</span><small>Minutes</small></div>
+                    <div class="countdown-block"><span id="cdSeconds">00</span><small>Seconds</small></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

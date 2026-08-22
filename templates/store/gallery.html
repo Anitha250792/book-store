@@ -1,0 +1,26 @@
+<section class="gallery-section">
+    <div class="container">
+        <div class="section-head text-center" data-aos="fade-up">
+            <span class="eyebrow eyebrow-center">Follow Along</span>
+            <h2 class="section-heading">Life at Inkleaf</h2>
+        </div>
+
+        <div class="gallery-grid">
+            {% for item in gallery %}
+            <a href="{{ business.instagram }}" target="_blank" rel="noopener" class="gallery-item" data-aos="zoom-in" data-aos-delay="{{ forloop.counter0|add:'0' }}0">
+                <img src="{{ item.image }}" alt="{{ item.caption }}" loading="lazy">
+                <div class="gallery-overlay">
+                    <i class="bi bi-instagram"></i>
+                    <span>{{ item.caption }}</span>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+
+        <div class="gallery-cta" data-aos="fade-up">
+            <a href="{{ business.instagram }}" target="_blank" rel="noopener" class="btn btn-outline-literary">
+                <i class="bi bi-instagram"></i> Follow Us on Instagram
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,14 @@
+<section class="stats-strip" id="statsStrip">
+    <div class="container">
+        <div class="stats-grid">
+            {% for stat in stats %}
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'0' }}00">
+                <div class="stat-value">
+                    <span class="count-up" data-target="{{ stat.value }}">0</span>{{ stat.suffix }}
+                </div>
+                <div class="stat-label">{{ stat.label }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
